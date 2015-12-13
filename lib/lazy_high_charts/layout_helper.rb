@@ -90,7 +90,7 @@ module LazyHighCharts
     def encapsulate_js(core_js)
       if request_is_xhr?
         js_output = "#{js_start} #{core_js} #{js_end}"
-      elsif defined?(Turbolinks) && request_is_referrer?
+      elsif defined?(Turbolinks)
         js_output =<<-EOJS
         #{js_start}
           var f = function(){
